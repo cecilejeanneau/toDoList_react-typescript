@@ -1,0 +1,17 @@
+{
+	"plugins": ["@typescript-eslint", "react"],
+	"extends": [
+	  "plugin:react/recommended",
+	  "plugin:@typescript-eslint/recommended",
+	  "google"
+	],
+	"rules": {
+	  "prefer-const": "error",
+	  "@typescript-eslint/no-unused-vars": "error",
+	  "@typescript-eslint/no-explicit-any": "error",
+	  "no-tabs": "off",
+	  "linebreak-style": "off",
+	  "indent": ["error", "tab"],
+	  "max-len": ["error", { "code": 160 }]
+	}
+  }
