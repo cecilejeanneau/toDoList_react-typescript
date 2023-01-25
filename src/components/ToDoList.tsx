@@ -1,6 +1,5 @@
 import React from 'react';
-// import ToDoItems from './ToDoItems';
-// import fakeDatas from '../datas/toDos.js';
+import ToDoItems from './ToDoItems';
 import {useState} from 'react';
 import fakedatas from '../datas/fakedatas';
 import ITodoList from '../models/ITodoList';
@@ -11,7 +10,7 @@ import ToDoForm from './ToDoForm';
  * List of toDos
  * @return {JSX.Element} ToDoList component
  */
-function ToDoList() {
+function ToDoList(): JSX.Element {
 	const [toDoList, setToDoList] = useState<ITodoList>(fakedatas);
 	// create var stock in useState : toDoList and setToDoList to rerender when needed
 
@@ -34,6 +33,7 @@ function ToDoList() {
 			<h1>{toDoList.title}</h1>
 
 			<ToDoForm onNewTask={add} />
+			<ToDoItems tasks={toDoList.tasks} />
 		</div>
 	);
 }

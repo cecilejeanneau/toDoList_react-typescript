@@ -11,7 +11,7 @@ interface IToDoFormProps {
  * @param {IToDoFormProps} props properties of the components
  * @return {JSX.Element} input in form
  */
-function ToDoForm(props: IToDoFormProps) {
+function ToDoForm(props: IToDoFormProps): JSX.Element {
 	const [taskTitle, setTasktitle] = useState('');
 
 	/**
