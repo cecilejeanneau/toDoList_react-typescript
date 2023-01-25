@@ -5,6 +5,7 @@ import fakedatas from '../datas/fakedatas';
 import ITodoList from '../models/ITodoList';
 import {nanoid} from 'nanoid';
 import ToDoForm from './ToDoForm';
+import IToDos from '../models/IToDos';
 
 /**
  * List of toDos
@@ -28,12 +29,23 @@ function ToDoList(): JSX.Element {
 		setToDoList(structuredClone(toDoList));
 	}
 
+	/**
+	 * Delete a task
+	 * @param {IToDos} task
+	 * @return {void}
+	 */
+	function onDelete(task: IToDos) {
+		const pos = toDoList.tasks.findIndex((t) => t.id === task.id);
+		toDoList.tasks.splice(pos, 1);
+		setToDoList(structuredClone(toDoList));
+	}
+
 	return (
 		<div>
 			<h1>{toDoList.title}</h1>
 
 			<ToDoForm onNewTask={add} />
-			<ToDoItems tasks={toDoList.tasks} />
+			<ToDoItems tasks={toDoList.tasks} onDelete={onDelete}/>
 		</div>
 	);
 }
