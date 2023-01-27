@@ -3,6 +3,8 @@ import IToDos from '../models/IToDos';
 import ToDoItem from './ToDoItem';
 
 interface IToDoItemsProps {
+	onDelete: (task: IToDos) => void;
+	onCheckbox: (task: IToDos) => void;
 	tasks: IToDos[]
 }
 
@@ -20,7 +22,7 @@ function ToDoItems(props: IToDoItemsProps): JSX.Element {
 		<div>
 			<p>Vous avez {remaining} tâches sur {tasks.length} à terminer</p>
 			{tasks.map((task) => {
-				return <ToDoItem task={task} key={task.id} />;
+				return <ToDoItem onCheckbox={props.onCheckbox} task={task} key={task.id} onDelete={props.onDelete} />;
 			})}
 		</div>
 	);
