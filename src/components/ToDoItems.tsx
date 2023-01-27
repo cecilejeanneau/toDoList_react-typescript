@@ -20,7 +20,7 @@ function ToDoItems(props: IToDoItemsProps): JSX.Element {
 
 	return (
 		<div>
-			<p>Vous avez {remaining} tâches sur {tasks.length} à terminer</p>
+			<p>{remaining} / {tasks.length}</p>
 			{tasks.map((task) => {
 				return <ToDoItem onCheckbox={props.onCheckbox} task={task} key={task.id} onDelete={props.onDelete} />;
 			})}
