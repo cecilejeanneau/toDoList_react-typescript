@@ -4,7 +4,7 @@ import ToDoItem from './ToDoItem';
 
 interface IToDoItemsProps {
 	onDelete: (task: IToDos) => void;
-	tasks: IToDos[]
+	tasks: IToDos[],
 }
 
 /**
@@ -19,7 +19,7 @@ function ToDoItems(props: IToDoItemsProps): JSX.Element {
 
 	return (
 		<div>
-			<p>Vous avez {remaining} tâches sur {tasks.length} à terminer</p>
+			<p>{remaining} / {tasks.length}</p>
 			{tasks.map((task) => {
 				return <ToDoItem task={task} key={task.id} onDelete={props.onDelete} />;
 			})}

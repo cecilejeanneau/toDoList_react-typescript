@@ -3,7 +3,8 @@ import ITodoList from '../models/ITodoList';
 import IToDos from '../models/IToDos';
 
 export default <ITodoList>{
-	title: 'Courses de Noël',
+	username: 'George',
+	title: 'Courses',
 	tasks: [
 		<IToDos>{id: nanoid(), done: true, title: 'Nourrir le chat'},
 		<IToDos>{id: nanoid(), done: false, title: 'Faire les courses'},

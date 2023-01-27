@@ -34,7 +34,7 @@ function ToDoList(): JSX.Element {
 	 * @param {IToDos} task
 	 * @return {void}
 	 */
-	function onDelete(task: IToDos) {
+	function onDelete(task: IToDos): void {
 		const pos = toDoList.tasks.findIndex((t) => t.id === task.id);
 		toDoList.tasks.splice(pos, 1);
 		setToDoList(structuredClone(toDoList));
@@ -42,7 +42,10 @@ function ToDoList(): JSX.Element {
 
 	return (
 		<div>
-			<h1>{toDoList.title}</h1>
+			<header className='bg-light-nuance-40/80 rounded-xl rounded-t-none text-center p-4'>
+				<p className='text-3xl font-bold uppercase'>Hello - {toDoList.username}</p>
+			</header>
+			<h1 className='text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h1>
 
 			<ToDoForm onNewTask={add} />
 			<ToDoItems tasks={toDoList.tasks} onDelete={onDelete}/>

@@ -34,9 +34,9 @@ function ToDoForm(props: IToDoFormProps): JSX.Element {
 	return (
 		<form onSubmit={sendData}>
 			<label htmlFor="">
-				<input type="text" placeholder='nom de la tâche' onInput={updateField} />
+				<input className='w-20' type="text" placeholder='new task...' onInput={updateField} />
 			</label>
-			<button type="submit">Ajouter une tâche</button>
+			<button type="submit">+</button>
 		</form>
 	);
 }

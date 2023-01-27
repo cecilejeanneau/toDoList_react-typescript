@@ -11,7 +11,7 @@ interface IToDoItemProps {
  * @param {IToDoItemProps} props display individually one task by title
  * @return {JSX.Element}
  */
-function ToDoItem(props: IToDoItemProps) {
+function ToDoItem(props: IToDoItemProps): JSX.Element {
 	const {title} = props.task;
 
 	/**
@@ -24,7 +24,7 @@ function ToDoItem(props: IToDoItemProps) {
 
 	return (
 		<div>
-			<p>{title}</p>
+			<p className='text-3xl font-semibold'>{title}</p>
 			<button type="button" title="Delete" onClick={onDelete}>X</button>
 		</div>
 	);
