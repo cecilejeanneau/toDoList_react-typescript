@@ -3,6 +3,7 @@ import IToDos from '../models/IToDos';
 
 interface IToDoItemProps {
 	onDelete: (task: IToDos) => void;
+	onCheckbox: (task: IToDos) => void;
 	task: IToDos
 }
 
@@ -13,6 +14,29 @@ interface IToDoItemProps {
  */
 function ToDoItem(props: IToDoItemProps) {
 	const {title} = props.task;
+	const {id} = props.task;
+	const {done} = props.task;
+
+	/**
+	 * Delete a task
+	 * @return {void}
+	 */
+	function onDelete(): void {
+		props.onDelete(props.task);
+	}
+
+	/**
+	 * Change state of a task
+	 * @param {React.ChangeEvent<HTMLInputElement>} event change state
+	 * @return {void}
+	 */
+	function onCheck(event: React.ChangeEvent<HTMLInputElement>): void {
+		props.onCheckbox({
+			id,
+			title,
+			done: event.currentTarget.checked,
+		});
+	}
 
 	/**
 	 * Delete a task
@@ -23,10 +47,11 @@ function ToDoItem(props: IToDoItemProps) {
 	}
 
 	return (
-		<div>
+		<label htmlFor={id}>
+			<input type="checkbox" id={id} defaultChecked={done} onChange={onCheck}/>
 			<p>{title}</p>
 			<button type="button" title="Delete" onClick={onDelete}>X</button>
-		</div>
+		</label>
 	);
 }
 
