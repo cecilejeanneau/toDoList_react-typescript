@@ -38,6 +38,14 @@ function ToDoItem(props: IToDoItemProps) {
 		});
 	}
 
+	/**
+	 * Delete a task
+	 * @return {void}
+	 */
+	function onDelete(): void {
+		props.onDelete(props.task);
+	}
+
 	return (
 		<label htmlFor={id}>
 			<input type="checkbox" id={id} defaultChecked={done} onChange={onCheck}/>

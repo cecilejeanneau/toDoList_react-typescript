@@ -41,7 +41,6 @@ function ToDoList(): JSX.Element {
 		setToDoList(structuredClone(toDoList));
 	}
 
-
 	/**
 	 * Change state of a task
 	 * @param {IToDos} task task from tasks list
