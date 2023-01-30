@@ -9,8 +9,10 @@ import ToDoList from './components/ToDoList';
  */
 function App(): JSX.Element {
 	return (
-		<div className='App bg-waves bg-cover bg-no-repeat bg-bottom'>
-			<ToDoList />
+		<div className='App w-96 h-922 relative'>
+			<div className='bg-waves bg-cover bg-no-repeat bg-bottom absolute bottom-0 z-1'>
+				<ToDoList />
+			</div>
 		</div>
 	);
 }

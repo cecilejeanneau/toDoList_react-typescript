@@ -54,13 +54,20 @@ function ToDoList(): JSX.Element {
 
 	return (
 		<div>
-			<header className='bg-light-nuance-40/80 rounded-xl rounded-t-none text-center p-4'>
+			<header className='sticky top-0 bg-light-nuance-40/80 rounded-xl rounded-t-none text-center p-6'>
 				<p className='text-3xl font-bold uppercase'>Hello - {toDoList.username}</p>
 			</header>
-			<h1 className='text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h1>
+			<div>
+				<h2 className='underline text-3xl font-bold'>your lists</h2>
+				<div className='flex justify-evenly'>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+				</div>
+			</div>
 
-			<ToDoForm onNewTask={add} />
+			<hr className='border-2.5 border-black' />
+
 			<ToDoItems tasks={toDoList.tasks} onDelete={onDelete} onCheckbox={onCheckbox} />
+			<ToDoForm onNewTask={add} tasks={toDoList.tasks}/>
 		</div>
 	);
 }

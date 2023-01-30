@@ -39,10 +39,12 @@ function ToDoItem(props: IToDoItemProps): JSX.Element {
 	}
 
 	return (
-		<label htmlFor={id}>
-			<input type="checkbox" id={id} defaultChecked={done} onChange={onCheck}/>
-			<p className='text-3xl font-semibold'>{title}</p>
-			<button type="button" title="Delete" onClick={onDelete}>X</button>
+		<label className='flex items-center gap-3 p-2' htmlFor={id}>
+			<input
+				className='w-10 h-10 rounded-full bg-dark-color-60 checked:bg-color-state-success checked:line-through'
+				type="checkbox" id={id} defaultChecked={done} onChange={onCheck}/>
+			<p className={`text-2xl font-semibold ${props.task.done ? 'line-through' : ''}`}>{title}</p>
+			<button className='text-xl' type="button" title="Delete" onClick={onDelete}>💩</button>
 		</label>
 	);
 }
