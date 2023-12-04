@@ -53,11 +53,29 @@ function ToDoList(): JSX.Element {
 	}
 
 	return (
-		<div>
-			<h1>{toDoList.title}</h1>
+		<div className='w-full relative md:overflow-hidden h-screen'>
+			<header className='sticky top-0 text-center p-6 pt-0 z-5'>
+				<p className='bg-light-nuance-40/80 rounded-xl rounded-t-none text-3xl font-bold uppercase w-fit p-4 pt-0 m-auto'>
+					Hello - {toDoList.username}</p>
+			</header>
+			<div className='border-b-2 border-black md:border-l-2 md:border-b-0 md:absolute md:right-0 md:h-screen p-6 md:w-56 overflow-auto
+			md:overflow-y-auto'>
+				<h2 className='underline text-3xl font-bold'>your lists</h2>
+				<div className='snap-x md:snap-y flex justify-between gap-2 md:flex-col overflow-auto '>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+					<h3 className='w-fit p-5 text-2xl font-semibold bg-dark-color-20 rounded-lg'>{toDoList.title}</h3>
+				</div>
+				{/* <hr className='border-2.5 border-black' /> */}
+			</div>
 
-			<ToDoForm onNewTask={add} />
 			<ToDoItems tasks={toDoList.tasks} onDelete={onDelete} onCheckbox={onCheckbox} />
+			<ToDoForm onNewTask={add} tasks={toDoList.tasks}/>
 		</div>
 	);
 }

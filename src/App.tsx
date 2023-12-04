@@ -9,7 +9,7 @@ import ToDoList from './components/ToDoList';
  */
 function App(): JSX.Element {
 	return (
-		<div className="App">
+		<div className='w-full flex flex-col bg-color-light-primary'>
 			<ToDoList />
 		</div>
 	);
