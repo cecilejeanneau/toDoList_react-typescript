@@ -19,7 +19,8 @@ function ToDoItems(props: IToDoItemsProps): JSX.Element {
 	// const remaining = tasks.filter((t) => !t.done).length;
 
 	return (
-		<div className='flex flex-col'>
+		<div className='flex flex-col  bg-waves bg-cover bg-no-repeat bg-bottom  md:absolute md:top-0
+	md:bottom-0 z-1 md:overflow-y-auto md:left-0 md:right-[14rem]'>
 			{tasks.map((task) => {
 				return <ToDoItem onCheckbox={props.onCheckbox} task={task} key={task.id} onDelete={props.onDelete} />;
 			})}

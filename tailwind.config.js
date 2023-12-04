@@ -14,6 +14,7 @@ module.exports = {
 			},
 			colors: {
 				'light-nuance-40': '#A5D5DB',
+				'color-light-primary': '#E8F4F6',
 				'dark-color-20': '#187984',
 				'dark-color-60': '#0C3C42',
 				'color-state-success': '#AEEC2B',

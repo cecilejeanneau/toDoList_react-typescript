@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  width: 100%;
+}
+
 html,
 body {
   font-family: 'Advent Pro', Roboto, Oxygen,

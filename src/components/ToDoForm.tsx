@@ -32,15 +32,17 @@ function ToDoForm(props: IToDoFormProps): JSX.Element {
 	 * handle conflict with submit
 	 * @param {FormEvent<HTMLFormElement>} event submit
 	 */
-	function sendData(event: FormEvent<HTMLFormElement>) {
+	function sendData(event: FormEvent<HTMLFormElement>): void {
 		event.preventDefault();
 		props.onNewTask(taskTitle);
 	}
+
+
 	return (
-		<form className='m-auto w-fit fixed bottom-10 flex items-center p-2 bg-light-nuance-40/60 rounded-lg border-black border gap-6 absolute z-3'
+		<form className='fixed bottom-10 flex items-center p-2 bg-light-nuance-40/60 rounded-lg border-black border gap-4 z-3'
 			onSubmit={sendData}>
 			<label htmlFor='task'>
-				<input className='w-25 rounded-xl' type="text" placeholder='new task...' onInput={updateField} />
+				<input className='rounded-xl' type="text" placeholder='new task...' onInput={updateField} />
 			</label>
 			<button className='text-white text-4xl w-10 h-10 rounded-full bg-black' type="submit">+</button>
 			<p className='text-black text-3xl font-bold'>{remaining}/{tasks.length}</p>
